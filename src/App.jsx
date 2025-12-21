@@ -1,9 +1,20 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+import { Route, Routes, useLocation } from "react-router";
+import Home from "./pages/Home";
 
 const App = () => {
+  const isOwnerPath = useLocation().pathname.includes("owner");
+
   return (
     <div>
-      <h1>hello World</h1>
+      {!isOwnerPath && <Navbar />}
+
+      <div className="min-h-[70vh]">
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
     </div>
   );
 };
