@@ -1,16 +1,72 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { assets } from "../assets/assets";
 const Navbar = () => {
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Hotels", path: "/rooms" },
-    { name: "Experience", path: "/" },
-    { name: "About", path: "/" },
-  ];
-
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const navLinks = (
+    <>
+      {/* Home */}
+      <NavLink
+        to="/"
+        className={`group relative w-fit ${
+          isScrolled ? "text-gray-700" : "text-white"
+        }`}
+      >
+        Home
+        <span
+          className={`absolute left-0 -bottom-1 h-[2px] w-0
+    transition-all duration-300 group-hover:w-full
+    ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
+        />
+      </NavLink>
+
+      {/* Hotels */}
+      <NavLink
+        to="/hotels"
+        className={`group relative w-fit ${
+          isScrolled ? "text-gray-700" : "text-white"
+        }`}
+      >
+        Hotels
+        <span
+          className={`absolute left-0 -bottom-1 h-[2px] w-0
+    transition-all duration-300 group-hover:w-full
+    ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
+        />
+      </NavLink>
+
+      {/* Experience */}
+      <NavLink
+        to="/experience"
+        className={`group relative w-fit ${
+          isScrolled ? "text-gray-700" : "text-white"
+        }`}
+      >
+        Experience
+        <span
+          className={`absolute left-0 -bottom-1 h-[2px] w-0
+    transition-all duration-300 group-hover:w-full
+    ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
+        />
+      </NavLink>
+
+      {/* About */}
+      <NavLink
+        to="/about"
+        className={`group relative w-fit ${
+          isScrolled ? "text-gray-700" : "text-white"
+        }`}
+      >
+        About
+        <span
+          className={`absolute left-0 -bottom-1 h-[2px] w-0
+    transition-all duration-300 group-hover:w-full
+    ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
+        />
+      </NavLink>
+    </>
+  );
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +80,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${
         isScrolled
-          ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4"
+          ? "bg-white/60  backdrop-blur-xl shadow-md text-gray-700  py-3 md:py-4"
           : "py-4 md:py-6"
       }`}
     >
@@ -33,31 +89,17 @@ const Navbar = () => {
         <img
           src={assets.logo}
           alt="logo"
-          className={`h-9 ${isScrolled && "invert-opacity-80"}`}
+          className={`h-9 text-black ${isScrolled && "invert-opacity-80"}`}
         />
       </Link>
 
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-4 lg:gap-8">
-        {navLinks.map((link, i) => (
-          <a
-            key={i}
-            href={link.path}
-            className={`group flex flex-col gap-0.5 ${
-              isScrolled ? "text-gray-700" : "text-white"
-            }`}
-          >
-            {link.name}
-            <div
-              className={`${
-                isScrolled ? "bg-gray-700" : "bg-white"
-              } h-0.5 w-0 group-hover:w-full transition-all duration-300`}
-            />
-          </a>
-        ))}
+        {navLinks}
+
         <button
           className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${
-            isScrolled ? "text-black" : "text-white"
+            isScrolled ? "text-gray-700" : "text-black"
           } transition-all`}
         >
           Dashboard
@@ -105,11 +147,7 @@ const Navbar = () => {
           <img src={assets.closeIcon} alt="cloneMenu" className="h-6.5" />
         </button>
 
-        {navLinks.map((link, i) => (
-          <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
-            {link.name}
-          </a>
-        ))}
+        {navLinks}
 
         <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
           Dashboard
