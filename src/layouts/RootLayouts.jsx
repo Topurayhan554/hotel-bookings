@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Container from "../components/Container";
+import { ToastContainer } from "react-toastify";
 
 const RootLayouts = () => {
   const { pathname } = useLocation();
@@ -19,6 +20,7 @@ const RootLayouts = () => {
       </Container>
 
       {!isOwnerPath && <Footer />}
+      <ToastContainer />
     </div>
   );
 };

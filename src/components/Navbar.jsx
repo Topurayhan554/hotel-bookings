@@ -2,8 +2,12 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 import { assets } from "../assets/assets";
 const Navbar = () => {
+
+
+
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+ 
   const navLinks = (
     <>
       {/* Home */}
@@ -115,13 +119,14 @@ const Navbar = () => {
             isScrolled && "invert"
           } h-7 transition-all duration-500`}
         />
-        <button
+        <Link
+          to={"/login"}
           className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${
             isScrolled ? " bg-white text-black " : "  bg-black text-white"
           }`}
         >
           Login
-        </button>
+        </Link>
       </div>
 
       {/* Mobile Menu Button */}
