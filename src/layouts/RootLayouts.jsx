@@ -13,11 +13,7 @@ const RootLayouts = () => {
     <div className="flex min-h-screen flex-col">
       {!isOwnerPath && <Navbar />}
 
-      <Container>
-        <div className="flex-1 w-full mx-auto px-4 ">
-          <Outlet />
-        </div>
-      </Container>
+      <Outlet />
 
       {!isOwnerPath && <Footer />}
       <ToastContainer />

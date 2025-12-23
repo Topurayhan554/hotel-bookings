@@ -167,7 +167,7 @@ const Register = () => {
           <input
             type={show ? "text" : "password"}
             name="password"
-            className="input w-full border border-emerald-300/60 rounded-full h-12 px-4 mt-1 text-gray-700 placeholder-gray-500/80 outline-none"
+            className="input w-full border border-emerald-300/60 rounded-full h-12 px-4 mt-1 text-white placeholder-gray-500/80 outline-none"
             placeholder="Type your password"
             required
           />
