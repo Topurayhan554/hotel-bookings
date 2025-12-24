@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import FeaturedDestination from "../components/FeaturedDestination";
 import Container from "../components/Container";
 import ExclusiveOffers from "../components/ExclusiveOffers";
+import Testimonial from "../components/Testimonial";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
 
       <FeaturedDestination />
       <ExclusiveOffers />
+      <Testimonial />
     </>
   );
 };
