@@ -5,6 +5,12 @@ import Home from "../pages/Home";
 import Login from "../pages/Auth/login";
 import Register from "../pages/Auth/Register";
 import ManageAccount from "../pages/ManageAccount";
+import LoadingSpinner from "../components/LoadingSpnnier";
+import Hotels from "../pages/Hotels";
+import Experience from "../pages/Experience";
+import About from "../pages/About";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -12,8 +18,9 @@ export const router = createBrowserRouter([
     element: <RootLayouts />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home />,
+        hydrateFallbackElement: <LoadingSpinner />,
       },
       {
         path: "/login",
@@ -26,6 +33,26 @@ export const router = createBrowserRouter([
       {
         path: "/manage-account",
         element: <ManageAccount />,
+      },
+      {
+        path: "/hotels",
+        element: <Hotels />,
+      },
+      {
+        path: "/experience",
+        element: <Experience />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
       },
     ],
   },
