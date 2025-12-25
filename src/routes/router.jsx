@@ -11,6 +11,7 @@ import About from "../pages/About";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import AllRooms from "../pages/AllRooms";
+import RoomDetails from "../pages/RoomDetails";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/hotels/:id",
+        element: <RoomDetails />,
       },
       {
         path: "/dashboard",
