@@ -6,11 +6,11 @@ import Login from "../pages/Auth/login";
 import Register from "../pages/Auth/Register";
 import ManageAccount from "../pages/ManageAccount";
 import LoadingSpinner from "../components/LoadingSpnnier";
-import Hotels from "../pages/Hotels";
 import Experience from "../pages/Experience";
 import About from "../pages/About";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import AllRooms from "../pages/AllRooms";
 
 export const router = createBrowserRouter([
   {
@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/hotels",
-        element: <Hotels />,
+        element: <AllRooms />,
       },
       {
         path: "/experience",
