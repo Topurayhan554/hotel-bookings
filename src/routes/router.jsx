@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import AllRooms from "../pages/AllRooms";
 import RoomDetails from "../pages/RoomDetails";
+import MyBookings from "../pages/MyBookings";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
       {
         path: "/hotels/:id",
         element: <RoomDetails />,
+      },
+      {
+        path: "/my-booklist",
+        element: <MyBookings />,
       },
       {
         path: "/dashboard",
