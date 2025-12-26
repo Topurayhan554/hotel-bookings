@@ -9,10 +9,13 @@ import LoadingSpinner from "../components/LoadingSpnnier";
 import Experience from "../pages/Experience";
 import About from "../pages/About";
 import PrivateRoute from "./PrivateRoute";
-import Dashboard from "../pages/Dashboard/Dashboard";
 import AllRooms from "../pages/AllRooms";
 import RoomDetails from "../pages/RoomDetails";
 import MyBookings from "../pages/MyBookings";
+import Layout from "../pages/hotelOwner/Layout";
+import Dashboard from "../pages/hotelOwner/Dashboard";
+import AddRoom from "../pages/hotelOwner/AddRoom";
+import ListRoom from "../pages/hotelOwner/ListRoom";
 
 export const router = createBrowserRouter([
   {
@@ -56,13 +59,23 @@ export const router = createBrowserRouter([
         path: "/my-booklist",
         element: <MyBookings />,
       },
+    ],
+  },
+  {
+    path: "/owner",
+    element: <Layout />,
+    children: [
       {
-        path: "/dashboard",
-        element: (
-          <PrivateRoute>
-            <Dashboard />
-          </PrivateRoute>
-        ),
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "add-room",
+        element: <AddRoom />,
+      },
+      {
+        path: "list-room",
+        element: <ListRoom />,
       },
     ],
   },
