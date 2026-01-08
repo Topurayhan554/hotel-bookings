@@ -63,7 +63,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "/owner",
-    element: <Layout />,
+    element: (
+      <PrivateRoute>
+        <Layout />
+      </PrivateRoute>
+    ),
     children: [
       {
         index: true,

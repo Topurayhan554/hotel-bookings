@@ -16,61 +16,81 @@ const Navbar = () => {
       {/* Home */}
       <NavLink
         to="/"
-        className={`group relative w-fit ${
-          isScrolled ? "text-white" : "text-white"
-        }`}
+        className={({ isActive }) =>
+          `group relative w-fit text-white ${isActive ? "font-semibold" : ""}`
+        }
       >
-        Home
-        <span
-          className={`absolute left-0 -bottom-1 h-[2px] w-0
-    transition-all duration-300 group-hover:w-full
-    ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
-        />
+        {({ isActive }) => (
+          <>
+            Home
+            <span
+              className={`absolute left-0 -bottom-1 h-[2px]
+          transition-all duration-300
+          ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+          ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
+            />
+          </>
+        )}
       </NavLink>
 
       {/* Hotels */}
       <NavLink
         to="/hotels"
-        className={`group relative w-fit ${
-          isScrolled ? "text-white" : "text-white"
-        }`}
+        className={({ isActive }) =>
+          `group relative w-fit text-white ${isActive ? "font-semibold" : ""}`
+        }
       >
-        Hotels
-        <span
-          className={`absolute left-0 -bottom-1 h-[2px] w-0
-    transition-all duration-300 group-hover:w-full
-    ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
-        />
+        {({ isActive }) => (
+          <>
+            Hotels
+            <span
+              className={`absolute left-0 -bottom-1 h-[2px]
+          transition-all duration-300
+          ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+          ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
+            />
+          </>
+        )}
       </NavLink>
 
       {/* Experience */}
       <NavLink
         to="/experience"
-        className={`group relative w-fit ${
-          isScrolled ? "text-white" : "text-white"
-        }`}
+        className={({ isActive }) =>
+          `group relative w-fit text-white ${isActive ? "font-semibold" : ""}`
+        }
       >
-        Experience
-        <span
-          className={`absolute left-0 -bottom-1 h-[2px] w-0
-    transition-all duration-300 group-hover:w-full
-    ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
-        />
+        {({ isActive }) => (
+          <>
+            Experience
+            <span
+              className={`absolute left-0 -bottom-1 h-[2px]
+          transition-all duration-300
+          ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+          ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
+            />
+          </>
+        )}
       </NavLink>
 
       {/* About */}
       <NavLink
         to="/about"
-        className={`group relative w-fit ${
-          isScrolled ? "text-white" : "text-white"
-        }`}
+        className={({ isActive }) =>
+          `group relative w-fit text-white ${isActive ? "font-semibold" : ""}`
+        }
       >
-        About
-        <span
-          className={`absolute left-0 -bottom-1 h-[2px] w-0
-    transition-all duration-300 group-hover:w-full
-    ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
-        />
+        {({ isActive }) => (
+          <>
+            About
+            <span
+              className={`absolute left-0 -bottom-1 h-[2px]
+          transition-all duration-300
+          ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+          ${isScrolled ? "bg-blue-600" : "bg-blue-400"}`}
+            />
+          </>
+        )}
       </NavLink>
     </>
   );
@@ -132,7 +152,7 @@ const Navbar = () => {
         {navLinks}
 
         <Link
-          to={"/dashboard"}
+          to={"/owner"}
           className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${
             isScrolled ? "text-white" : "text-black"
           } transition-all`}
@@ -331,7 +351,7 @@ const Navbar = () => {
         {navLinks}
 
         <Link
-          to={"/dashboard"}
+          to={"/owner"}
           className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all"
         >
           Dashboard
