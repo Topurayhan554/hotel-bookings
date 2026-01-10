@@ -2,7 +2,6 @@ import React from "react";
 import { createBrowserRouter } from "react-router";
 import RootLayouts from "../layouts/RootLayouts";
 import Home from "../pages/Home";
-import Login from "../pages/Auth/login";
 import Register from "../pages/Auth/Register";
 import ManageAccount from "../pages/ManageAccount";
 import LoadingSpinner from "../components/LoadingSpnnier";
@@ -16,6 +15,7 @@ import Layout from "../pages/hotelOwner/Layout";
 import Dashboard from "../pages/hotelOwner/Dashboard";
 import AddRoom from "../pages/hotelOwner/AddRoom";
 import ListRoom from "../pages/hotelOwner/ListRoom";
+import Login from "../pages/Auth/Login";
 
 export const router = createBrowserRouter([
   {
